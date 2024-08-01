@@ -18,7 +18,7 @@ const EditBanner = () => {
     useEffect(() => {
         const fetchBanner = async () => {
             try {
-                const res = await axios.get(`https://eventserver-rq5v.onrender.com/api/video/${_id}`);
+                const res = await axios.get(`http://localhost:7000/api/video/${_id}`);
                 setVideo(res.data.data); 
             } catch (error) {
                 toast.error("Failed to fetch video data");
@@ -40,7 +40,7 @@ const EditBanner = () => {
             return;
         }
         try {
-            const res = await axios.put(`https://eventserver-rq5v.onrender.com/api/video/${_id}`, { video: src });
+            const res = await axios.put(`http://localhost:7000/api/video/${_id}`, { video: src });
             if (res.status === 200) {
                 toast.success("Video updated successfully");
             }

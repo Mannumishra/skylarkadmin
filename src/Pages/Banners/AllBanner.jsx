@@ -10,7 +10,7 @@ const AllBanner = () => {
 
     const getApiData = async () => {
         try {
-            let res = await axios.get("https://eventserver-rq5v.onrender.com/api/video");
+            let res = await axios.get("http://localhost:7000/api/video");
             console.log(res);
             if (res.status === 200) {
                 const newData = res.data.data 
@@ -22,7 +22,7 @@ const AllBanner = () => {
     }
     const handleDelete = async(_id) => {
         try {
-            let res = await axios.delete("https://eventserver-rq5v.onrender.com/api/video/"+_id);
+            let res = await axios.delete("http://localhost:7000/api/video/"+_id);
             console.log(res);
             if (res.status === 200) {
                 toast.success("Vedio Deleted Successfully")

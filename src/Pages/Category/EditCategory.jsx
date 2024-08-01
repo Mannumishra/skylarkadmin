@@ -15,7 +15,7 @@ const EditCategory = () => {
 
     const getApiData = async () => {
         try {
-            let res = await axios.get("https://eventserver-rq5v.onrender.com/api/artist/" + _id)
+            let res = await axios.get("http://localhost:7000/api/artist/" + _id)
             console.log(res)
             if (res.status === 200) {
                 setData(res.data.data)
@@ -42,7 +42,7 @@ const EditCategory = () => {
         formData.append("image", data.image);
         try {
             setIsLoading(true);
-            const res = await axios.put("https://eventserver-rq5v.onrender.com/api/artist/" + _id, formData, {
+            const res = await axios.put("http://localhost:7000/api/artist/" + _id, formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 }
