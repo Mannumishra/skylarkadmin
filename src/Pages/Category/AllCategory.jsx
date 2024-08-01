@@ -10,7 +10,7 @@ const AllCategory = () => {
 
     const getApiData = async () => {
         try {
-            let res = await axios.get("http://localhost:7000/api/artist")
+            let res = await axios.get("https://api.skylarkartist.com/api/artist")
             console.log(res)
             if (res.status === 200) {
                 const newData = res.data.data
@@ -23,7 +23,7 @@ const AllCategory = () => {
 
     const deleteArt = async (_id) => {
         try {
-            let res = await axios.delete("http://localhost:7000/api/artist/" + _id)
+            let res = await axios.delete("https://api.skylarkartist.com/api/artist/" + _id)
             if (res.status === 200) {
                 toast.success("Artist Delete successfully")
                 getApiData()

@@ -23,7 +23,7 @@ const AddTag = () => {
         e.preventDefault()
         try {
             setIsloding(true)
-            const res =await axios.post("http://localhost:7000/api/gallery" ,formData)
+            const res =await axios.post("https://api.skylarkartist.com/api/gallery" ,formData)
             if(res.status===200){
                 toast.success("Gallery Image add successfully")
                 navigate("/all-tags")

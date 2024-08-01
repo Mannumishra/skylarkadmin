@@ -29,7 +29,7 @@ const AddBanner = () => {
 
         try {
             setIsLoading(true);
-            const res = await axios.post("http://localhost:7000/api/video", { video: src });
+            const res = await axios.post("https://api.skylarkartist.com/api/video", { video: src });
             if (res.status === 200) {
                 toast.success("New Video Added Successfully");
                 navigate("/all-banners");

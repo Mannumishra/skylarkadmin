@@ -14,7 +14,7 @@ const EditTag = () => {
 
     const getApiData = async(_id)=>{
         try {
-            let res = await axios.get("http://localhost:7000/api/gallery/"+_id)
+            let res = await axios.get("https://api.skylarkartist.com/api/gallery/"+_id)
             console.log(res)
             if (res.status === 200) {
                 setData(res.data.data)
@@ -35,7 +35,7 @@ const EditTag = () => {
         e.preventDefault()
         try {
             setIsloding(true)
-            const res =await axios.put("http://localhost:7000/api/gallery/"+_id ,formData)
+            const res =await axios.put("https://api.skylarkartist.com/api/gallery/"+_id ,formData)
            if(res.status===200){
             toast.success("Gallery update successfully")
             navigate("/all-tags")

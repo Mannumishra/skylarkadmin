@@ -30,7 +30,7 @@ const AddCategory = () => {
 
         try {
             setIsLoading(true);
-            const res = await axios.post("http://localhost:7000/api/artist", formData, {
+            const res = await axios.post("https://api.skylarkartist.com/api/artist", formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 }

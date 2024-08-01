@@ -11,7 +11,7 @@ const AllTags = () => {
 
     const getApiData = async () => {
         try {
-            let res = await axios.get("http://localhost:7000/api/gallery")
+            let res = await axios.get("https://api.skylarkartist.com/api/gallery")
             console.log(res)
             if (res.status === 200) {
                 const newData = res.data.data
@@ -23,7 +23,7 @@ const AllTags = () => {
     }
     const deleteGallery = async (_id) => {
         try {
-            let res = await axios.delete("http://localhost:7000/api/gallery/" + _id)
+            let res = await axios.delete("https://api.skylarkartist.com/api/gallery/" + _id)
             if (res.status === 200) {
                 toast.success("Gallery Image Delete Successfully")
                 getApiData()
